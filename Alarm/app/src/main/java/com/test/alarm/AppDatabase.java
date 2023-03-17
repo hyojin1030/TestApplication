@@ -7,9 +7,9 @@ import androidx.room.InvalidationTracker;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {TimeTable.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract UserDao userDao();
+    public abstract TimeTableDao userDao();
 
     @Override
     public void clearAllTables() {

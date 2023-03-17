@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
+                /*AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
 
                 UserDao userDao = db.userDao();
 
@@ -44,11 +44,23 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("TEST", "last : " + test.getLastName());
                     Log.d("TEST", "testdata 1 : " + test.getTestData().getData1());
                     Log.d("TEST", "testdata 2 : " + test.getTestData().getData2());
-                }
+                }*/
             }
         }).start();
 
+        TimeSet timeSet = new TimeSet();
+        timeSet.setTime("TimeSet - setTime");
+        timeSet.setOn(true);
+        timeSet.setMin(10);
 
+        TimeIndex timeIndex = new TimeIndex();
+        timeIndex.setStart(timeSet);
+        timeIndex.setEnd(timeSet);
+
+        TimeTable timeTable = new TimeTable();
+        timeTable.setId("testid");
+        timeTable.setAm(timeIndex);
+        timeTable.setPm(timeIndex);
 
     }
 }
