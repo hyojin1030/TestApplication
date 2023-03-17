@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 @Database(entities = {TimeTable.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract TimeTableDao userDao();
+    public abstract TimeTableDao timeTableDao();
 
     @Override
     public void clearAllTables() {
