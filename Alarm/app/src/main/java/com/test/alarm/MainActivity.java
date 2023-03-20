@@ -1,16 +1,19 @@
 package com.test.alarm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,43 +32,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                /*AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
 
                 TimeTableDao timeTableDao = db.timeTableDao();
 
-                TimeSet timeSet1 = new TimeSet();
-                timeSet1.setTime("2023-03-17 18:30:00");
-                timeSet1.setOn(true);
-                timeSet1.setMin(10);
+                Date date = new Date();
 
-                TimeSet timeSet2 = new TimeSet();
-                timeSet2.setTime("2023-03-17 18:30:00");
-                timeSet2.setOn(false);
-                timeSet2.setMin(10);
-
-                TimeIndex timeIndex = new TimeIndex();
-                timeIndex.setStart(timeSet1);
-                timeIndex.setEnd(timeSet2);
-
-                TimeTable timeTable = new TimeTable();
-                timeTable.setId("testid");
-                timeTable.setAm(timeIndex);
-                timeTable.setPm(timeIndex);
+                TimeSet timeSet = new TimeSet(formatter.format(date), true, 1);
+                TimeIndex index = new TimeIndex(timeSet, timeSet);
+                TimeTable timeTable = new TimeTable(111, index, index);
 
                 timeTableDao.insertAll(timeTable);
 
                 List<TimeTable> tables = timeTableDao.getAll();
 
                 for (TimeTable table : tables) {
-                    Log.d("TEST", "id : " + table.am.start.time);
-                    Log.d("TEST", "id : " + table.am.start.isOn);
-                    Log.d("TEST", "id : " + table.am.end.min);
-                }*/
-
-                setNotice("2023-03-20 16:13:00", 1);
-
-                setNotice("2023-03-20 16:14:00", 2);
-
+                    if (table.getAm().getStart().isOn()) {
+                        setNotice(table.getAm().getStart().getTime(), table.id, table.getAm().getStart().getMin());
+                        setNotice(table.getAm().getStart().getTime(), table.id + 1, table.getAm().getStart().getMin() + 1);
+                    }
+                }
             }
         }).start();
 
@@ -74,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setNotice(String datetime, int alarmId) {
+    private void setNotice(String datetime, int alarmId, int delay) {
         //알람을 수신할 수 있도록 하는 리시버로 인텐트 요청
         Intent receiverIntent = new Intent(this, AlarmReceiver.class);
         receiverIntent.putExtra("state", "on");
@@ -87,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Date date = formatter.parse(datetime);
             calendar.setTime(date);
+            calendar.add(Calendar.MINUTE, delay);
         } catch (Exception e) {
             e.printStackTrace();
         }

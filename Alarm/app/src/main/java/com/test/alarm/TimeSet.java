@@ -15,6 +15,12 @@ public class TimeSet {
         return time;
     }
 
+    public TimeSet(String time, boolean isOn, int min) {
+        this.time = time;
+        this.isOn = isOn;
+        this.min = min;
+    }
+
     public void setTime(String time) {
         this.time = time;
     }

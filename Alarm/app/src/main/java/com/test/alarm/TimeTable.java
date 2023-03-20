@@ -3,13 +3,14 @@ package com.test.alarm;
 import androidx.annotation.NonNull;
 import androidx.room.Embedded;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "timeTable")
 public class TimeTable {
     @PrimaryKey
     @NonNull
-    public String id;
+    public int id;
     @Embedded(prefix = "am_")
     public TimeIndex am;
     @Embedded(prefix = "pm_")
@@ -17,11 +18,30 @@ public class TimeTable {
     @Embedded(prefix = "etc_")
     public TimeIndex etc;
 
-    public String getId() {
+    public TimeTable() {
+
+    }
+
+    @Ignore
+    public TimeTable(int id, TimeIndex am, TimeIndex pm) {
+        this.id = id;
+        this.am = am;
+        this.pm = pm;
+    }
+
+    @Ignore
+    public TimeTable(int id, TimeIndex am, TimeIndex pm, TimeIndex etc) {
+        this.id = id;
+        this.am = am;
+        this.pm = pm;
+        this.etc = etc;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

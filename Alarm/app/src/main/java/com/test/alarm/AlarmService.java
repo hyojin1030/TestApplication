@@ -36,7 +36,10 @@ public class AlarmService extends Service {
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId);
             Notification notification = builder.setOngoing(true)
+                    .setContentTitle("알람테스트")
+                    .setContentText("111111")
                     .setSmallIcon(R.mipmap.ic_launcher)
+                    .setAutoCancel(true)
                     //.setCategory(Notification.CATEGORY_SERVICE)
                     .build();
 

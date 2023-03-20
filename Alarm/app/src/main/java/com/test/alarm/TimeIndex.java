@@ -8,6 +8,11 @@ public class TimeIndex {
     @Embedded(prefix = "end_")
     public TimeSet end;
 
+    public TimeIndex (TimeSet start, TimeSet end) {
+        this.start = start;
+        this.end = end;
+    }
+
     public TimeSet getStart() {
         return start;
     }
