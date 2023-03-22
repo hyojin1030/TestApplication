@@ -7,7 +7,9 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+        startActivityForResult(intent, 111);
+
         alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
 
@@ -38,18 +44,22 @@ public class MainActivity extends AppCompatActivity {
 
                 Date date = new Date();
 
-                TimeSet timeSet = new TimeSet(formatter.format(date), true, 1);
+                TimeSet timeSet = new TimeSet(formatter.format(date), true, 10);
                 TimeIndex index = new TimeIndex(timeSet, timeSet);
                 TimeTable timeTable = new TimeTable(111, index, index);
 
-                timeTableDao.insertAll(timeTable);
+                try {
+                    timeTableDao.insertAll(timeTable);
+                } catch (Exception e) {
+                    timeTableDao.updateData(timeTable);
+                }
 
                 List<TimeTable> tables = timeTableDao.getAll();
 
                 for (TimeTable table : tables) {
                     if (table.getAm().getStart().isOn()) {
                         setNotice(table.getAm().getStart().getTime(), table.id, table.getAm().getStart().getMin());
-                        setNotice(table.getAm().getStart().getTime(), table.id + 1, table.getAm().getStart().getMin() + 1);
+                        //setNotice(table.getAm().getStart().getTime(), table.id + 1, table.getAm().getStart().getMin() + 1);
                     }
                 }
             }
@@ -73,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Date date = formatter.parse(datetime);
             calendar.setTime(date);
-            calendar.add(Calendar.MINUTE, delay);
+            calendar.add(Calendar.SECOND, delay);
         } catch (Exception e) {
             e.printStackTrace();
         }
