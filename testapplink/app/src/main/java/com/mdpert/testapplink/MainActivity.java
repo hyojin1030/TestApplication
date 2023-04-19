@@ -23,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         Log.d("TAG", "branch test");
+=======
+        Log.d("test", "test");
+>>>>>>> test
 
         DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
                 .setLink(Uri.parse("https://www.example.com/"))
