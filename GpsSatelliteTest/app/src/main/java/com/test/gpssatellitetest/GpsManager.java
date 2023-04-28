@@ -116,7 +116,7 @@ public class GpsManager extends Service implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        Toast.makeText(mContext, "onLocationChanged", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(mContext, "onLocationChanged", Toast.LENGTH_SHORT).show();
         this.location = location;
     }
 
