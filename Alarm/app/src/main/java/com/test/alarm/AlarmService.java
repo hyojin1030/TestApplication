@@ -11,9 +11,11 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,11 +28,14 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import java.util.Locale;
+
 
 public class AlarmService extends Service {
 
     private MediaPlayer mediaPlayer;
     private Vibrator vibrator;
+    private TextToSpeech textToSpeech;
 
     private WindowManager mWindowManager;
     private WindowManager.LayoutParams mParams;
@@ -102,7 +107,7 @@ public class AlarmService extends Service {
 
         if (state.equals("on")) {
             // 알람음 재생 OFF, 알람음 시작 상태
-            this.mediaPlayer = MediaPlayer.create(this, R.raw.alarm);
+            this.mediaPlayer = MediaPlayer.create(this, R.raw.alarm_101);
             this.mediaPlayer.start();
 
             vibrator.vibrate(VibrationEffect.createWaveform(new long[]{500, 500}, new int[]{50, 0}, 0));
@@ -112,6 +117,42 @@ public class AlarmService extends Service {
             /*Intent intent = new Intent(AlarmService.this, TestActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);*/
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    vibrator.cancel();
+                }
+            }, 1000);
+
+
+            textToSpeech = new TextToSpeech(mContext, new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int state) {
+                    if (state == TextToSpeech.SUCCESS) {
+                        int lang = textToSpeech.setLanguage(Locale.KOREAN);
+                        textToSpeech.setPitch(1.0F);
+                        textToSpeech.setSpeechRate(1.0F);
+
+                        if (lang == TextToSpeech.LANG_MISSING_DATA || lang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            Log.d("AlarmService", "한국어 미지원");
+                        } else {
+                            Log.d("AlarmService", "한국어 지원 ");
+
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    int speechState = textToSpeech.speak("TTS test", TextToSpeech.QUEUE_FLUSH, null, "TESTID");
+                                    if (speechState == TextToSpeech.ERROR) {
+                                        Log.d("AlarmService", "TTS 에러");
+                                    }
+                                }
+                            }, mediaPlayer.getDuration());
+
+                        }
+                    }
+                }
+            });
         }
     }
 

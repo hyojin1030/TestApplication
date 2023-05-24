@@ -1,12 +1,15 @@
 package com.test.alarm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.room.Room;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -33,39 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
+        Date date = new Date();
+        String time = formatter.format(date);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
-
-                TimeTableDao timeTableDao = db.timeTableDao();
-
-                Date date = new Date();
-
-                TimeSet timeSet = new TimeSet(formatter.format(date), true, 10);
-                TimeIndex index = new TimeIndex(timeSet, timeSet);
-                TimeTable timeTable = new TimeTable(111, index, index);
-
-                try {
-                    timeTableDao.insertAll(timeTable);
-                } catch (Exception e) {
-                    timeTableDao.updateData(timeTable);
-                }
-
-                List<TimeTable> tables = timeTableDao.getAll();
-
-                for (TimeTable table : tables) {
-                    if (table.getAm().getStart().isOn()) {
-                        setNotice(table.getAm().getStart().getTime(), table.id, table.getAm().getStart().getMin());
-                        //setNotice(table.getAm().getStart().getTime(), table.id + 1, table.getAm().getStart().getMin() + 1);
-                    }
-                }
-            }
-        }).start();
-
-
+        setNotice(time, 1111, 10);
 
 
     }

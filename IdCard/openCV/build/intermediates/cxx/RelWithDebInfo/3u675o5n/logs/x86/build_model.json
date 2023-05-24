@@ -1,0 +1,171 @@
+{
+  "abi": "X86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "cxxBuildFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86",
+  "soFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86",
+  "soRepublishFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cmake/release/obj/x86",
+  "abiPlatformVersion": 29,
+  "cmake": {
+    "effectiveConfiguration": {
+      "inheritEnvironments": [],
+      "variables": []
+    }
+  },
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DANDROID_STL\u003dc++_shared"
+    ],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [
+      "opencv_jni_shared"
+    ],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/.cxx",
+      "intermediatesBaseFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates",
+      "intermediatesFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx",
+      "gradleModulePathName": ":openCV",
+      "moduleRootFolder": "/Users/juhyojin/TestApplication/IdCard/openCV",
+      "moduleBuildFile": "/Users/juhyojin/TestApplication/IdCard/openCV/build.gradle",
+      "makeFile": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "ndkFolder": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620",
+      "ndkVersion": "23.1.7779620",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 31,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30,
+          "S": 31
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "cmakeToolchainFile": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+      "cmake": {
+        "isValidCmakeAvailable": true,
+        "cmakeExe": "/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/cmake",
+        "minimumCmakeVersion": "3.18.1"
+      },
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "/Users/juhyojin/TestApplication/IdCard",
+        "sdkFolder": "/Users/juhyojin/Library/Android/sdk",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false
+      },
+      "outputOptions": [],
+      "ninjaExe": "/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/ninja"
+    },
+    "prefabClassPaths": [],
+    "prefabPackages": [],
+    "prefabPackageConfigurations": [],
+    "stlType": "c++_shared",
+    "optimizationTag": "RelWithDebInfo"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/prefab/x86",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "3u675o5n1kc2931k4a151k3h6x6f1w1u33141p6z1q1r68161j6g27721v1u12",
+  "configurationArguments": [
+    "-H/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper",
+    "-DCMAKE_SYSTEM_NAME\u003dAndroid",
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
+    "-DCMAKE_SYSTEM_VERSION\u003d29",
+    "-DANDROID_PLATFORM\u003dandroid-29",
+    "-DANDROID_ABI\u003dx86",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003dx86",
+    "-DANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620",
+    "-DCMAKE_ANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620",
+    "-DCMAKE_TOOLCHAIN_FILE\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+    "-DCMAKE_MAKE_PROGRAM\u003d/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86",
+    "-DCMAKE_BUILD_TYPE\u003dRelWithDebInfo",
+    "-B/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86",
+    "-GNinja",
+    "-DANDROID_STL\u003dc++_shared"
+  ],
+  "stlLibraryFile": "/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+  "intermediatesParentFolder": "/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n"
+}

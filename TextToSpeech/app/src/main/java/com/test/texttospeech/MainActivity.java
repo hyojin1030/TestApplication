@@ -2,6 +2,10 @@ package com.test.texttospeech;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
@@ -10,54 +14,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    Context mContext;
     EditText editText;
-    TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = (EditText) findViewById(R.id.edit_tts);
-        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int state) {
-                if (state == TextToSpeech.SUCCESS) {
-                    int lang = textToSpeech.setLanguage(Locale.KOREAN);
-                    textToSpeech.setPitch(1.0F);
-                    textToSpeech.setSpeechRate(1.0F);
+        mContext = getApplicationContext();
 
-                    if (lang == TextToSpeech.LANG_MISSING_DATA || lang == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Log.d("TEST_LOG", "한국어 미지원");
-                    } else {
-                        Log.d("TEST_LOG", "한국어 지원");
-                    }
-                }
-            }
-        });
+        editText = (EditText) findViewById(R.id.edit_tts);
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
     }
 
     public void onClickPlay(View view) {
-        String inputText = editText.getText().toString();
-        if (inputText != null) {
-            int speechState = textToSpeech.speak(inputText, TextToSpeech.QUEUE_FLUSH, null, "TESTID");
-            if (speechState == TextToSpeech.ERROR) {
-                Log.d("TEST_LOG", "TTS 에러");
-            }
-        }
+        Intent intent = new Intent(mContext, AlarmReceiver.class);
+        intent.putExtra("vibType", 1);
+        intent.putExtra("milliSec", 1000);
+        intent.putExtra("description", "테스트");
+        PendingIntent alarmIntent = PendingIntent.getBroadcast(mContext, 1000, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 18);
+        calendar.set(Calendar.MINUTE, 53);
+        calendar.set(Calendar.SECOND, 0);
+
+        AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), alarmIntent);
+
 
     }
 }
