@@ -1,0 +1,4 @@
+/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/ninja \
+  -C \
+  /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/Debug/364a1uj1/x86_64 \
+  opencv_jni_shared

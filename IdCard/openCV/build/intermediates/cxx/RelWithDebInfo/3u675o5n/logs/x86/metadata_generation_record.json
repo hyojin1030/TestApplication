@@ -11,11 +11,11 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1020295216
+    "memoizedHashCode": -1310228730
   },
   {
     "level_": 0,
-    "message_": "rebuilding JSON /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/android_gradle_build.json due to:",
+    "message_": "JSON \u0027/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/android_gradle_build.json\u0027 was up-to-date",
     "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
     "tag_": "release|x86",
     "diagnosticCode_": 0,
@@ -25,133 +25,7 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 799983269
-  },
-  {
-    "level_": 0,
-    "message_": "- expected json /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/android_gradle_build.json file is not present, will remove stale json folder",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 723807723
-  },
-  {
-    "level_": 0,
-    "message_": "- missing previous command file /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/metadata_generation_command.txt, will remove stale json folder",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 873070697
-  },
-  {
-    "level_": 0,
-    "message_": "- command changed from previous, will remove stale json folder",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1586746860
-  },
-  {
-    "level_": 0,
-    "message_": "created folder \u0027/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86\u0027",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 971191596
-  },
-  {
-    "level_": 0,
-    "message_": "executing cmake /Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/cmake \\\n  -H/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d29 \\\n  -DANDROID_PLATFORM\u003dandroid-29 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620 \\\n  -DCMAKE_ANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dRelWithDebInfo \\\n  -B/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86 \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1321337615
-  },
-  {
-    "level_": 0,
-    "message_": "/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/cmake \\\n  -H/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d29 \\\n  -DANDROID_PLATFORM\u003dandroid-29 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620 \\\n  -DCMAKE_ANDROID_NDK\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/Users/juhyojin/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/Users/juhyojin/Library/Android/sdk/cmake/3.18.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/RelWithDebInfo/3u675o5n/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dRelWithDebInfo \\\n  -B/Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86 \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 159127280
-  },
-  {
-    "level_": 0,
-    "message_": "Exiting generation of /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/compile_commands.json.bin normally",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1162711855
-  },
-  {
-    "level_": 0,
-    "message_": "done executing cmake",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1899093111
-  },
-  {
-    "level_": 0,
-    "message_": "write command file /Users/juhyojin/TestApplication/IdCard/openCV/.cxx/RelWithDebInfo/3u675o5n/x86/metadata_generation_command.txt",
-    "file_": "/Users/juhyojin/TestApplication/IdCard/openCV/libcxx_helper/CMakeLists.txt",
-    "tag_": "release|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -151823761
+    "memoizedHashCode": -1858018510
   },
   {
     "level_": 0,
@@ -165,6 +39,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 38979973
+    "memoizedHashCode": -250953541
   }
 ]

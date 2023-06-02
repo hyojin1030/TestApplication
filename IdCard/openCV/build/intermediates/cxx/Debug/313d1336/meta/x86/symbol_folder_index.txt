@@ -1,1 +1,0 @@
-/Users/juhyojin/TestApplication/IdCard/openCV/build/intermediates/cxx/Debug/313d1336/obj/x86
