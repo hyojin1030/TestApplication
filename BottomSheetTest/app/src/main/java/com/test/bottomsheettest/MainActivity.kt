@@ -1,8 +1,11 @@
 package com.test.bottomsheettest
 
+import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Base64
 import android.util.Log
 import android.view.MotionEvent
@@ -65,6 +68,12 @@ class MainActivity : AppCompatActivity() {
                     // 완전히 펼쳐진 상태
                     BottomSheetBehavior.STATE_EXPANDED-> {
                         Log.d("TAG", "state expanded")
+
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            val intent: Intent = Intent(this@MainActivity, SecondActivity::class.java)
+                            startActivity(intent)
+                        }, 3000)
+
                     }
 
                     // 반만 펼쳐진 상태

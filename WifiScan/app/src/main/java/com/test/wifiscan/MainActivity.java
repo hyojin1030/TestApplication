@@ -22,11 +22,17 @@ import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
-
+/**
+ * doc test - MainActivity
+ */
 public class MainActivity extends AppCompatActivity {
     WifiManager wifiManager;
     ListView wifiList;
 
+    /**
+     * doc test - onCreate
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * doc test - onrequest~
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -87,8 +99,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * doc test - onClickScan
+     * @param view
+     */
     public void onClickScan(View view) {
         wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+        wifiManager.startScan();
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -107,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (ScanResult result : results) {
 
-            adapter.add(result.SSID);
+            adapter.add(result.SSID + " /// " + result.BSSID);
 
         }
 
